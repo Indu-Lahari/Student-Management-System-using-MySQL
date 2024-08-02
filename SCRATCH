@@ -1,0 +1,95 @@
+# MySQL COMMANDS
+
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.02 sec)
+
+
+mysql> CREATE DATABASE school;
+Query OK, 1 row affected (0.23 sec)
+
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| school             |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+
+mysql> SHOW TABLES FROM school;
+Empty set (0.01 sec)
+
+
+mysql> CREATE TABLE students(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(255),
+    -> course VARCHAR(255),
+    -> mobile VARCHAR(255)
+    -> );
+ERROR 1046 (3D000): No database selected
+
+
+mysql> USE school;
+Database changed
+
+
+mysql> CREATE TABLE students(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(255),
+    -> course VARCHAR(255),
+    -> mobile VARCHAR(255)
+    -> );
+Query OK, 0 rows affected (0.47 sec)
+
+
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_school |
++------------------+
+| students         |
++------------------+
+1 row in set (0.00 sec)
+
+
+mysql> SELECT * FROM students;
+Empty set (0.02 sec)
+
+
+mysql> INSERT INTO students (id,name,course,mobile)
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+
+mysql> INSERT INTO students (name,course,mobile)
+    -> VALUES ("Indu Lahari","Astronomy","4567789865");
+Query OK, 1 row affected (0.13 sec)
+
+
+mysql> SELECT * FROM students;
++----+-------------+-----------+------------+
+| id | name        | course    | mobile     |
++----+-------------+-----------+------------+
+|  1 | Indu Lahari | Astronomy | 4567789865 |
++----+-------------+-----------+------------+
+1 row in set (0.00 sec)
+
+
+mysql> EXIT;
+Bye
+
+
