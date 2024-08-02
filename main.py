@@ -4,7 +4,6 @@ from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLineEdit, \
     QComboBox, QToolBar, QStatusBar, QGridLayout, QLabel, QMessageBox
 from PyQt6.QtGui import QAction, QIcon
 import sys
-import sqlite3
 import mysql.connector
 
 
